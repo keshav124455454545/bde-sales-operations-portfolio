@@ -104,6 +104,10 @@ interface AppContextType {
     totalBids: number;
     activeBids: number;
   };
+
+  // Theme
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -111,6 +115,25 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [data, setData] = useState<AppStateData>(() => loadStoredData());
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('bde_sales_ops_theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('bde_sales_ops_theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    showToast(theme === 'light' ? 'Switched to Dark Mode 🌙' : 'Switched to Light Mode ☀️', 'info');
+  };
 
   useEffect(() => {
     saveStoredData(data);
@@ -596,6 +619,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         resetData,
         restoreBackup,
         stats,
+        theme,
+        toggleTheme,
       }}
     >
       {children}

@@ -37,11 +37,14 @@ export const Services: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Layers className="w-5 h-5 text-brand-600" /> Service & Product Knowledge Library
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <Layers className="w-5 h-5" />
+            </div>
+            Service & Product Knowledge Library
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
-            Internal BDE knowledge base: capabilities, qualification discovery questions, objection handling scripts, and price benchmarks for all 8 Nexora offerings.
+            Internal BDE knowledge base: capabilities, qualification discovery questions, objection handling scripts, and price benchmarks for core Nexora service offerings.
           </p>
         </div>
 
@@ -61,7 +64,7 @@ export const Services: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Service Selector Sidebar */}
-        <div className="lg:col-span-4 bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3">
+        <div className="lg:col-span-4 figma-card p-4 rounded-2xl space-y-3">
           <div className="relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
             <input
@@ -103,23 +106,23 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Selected Service Detail Dossier */}
-        <div className="lg:col-span-8 bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-6">
+        <div className="lg:col-span-8 figma-card p-6 sm:p-8 rounded-2xl space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
             <div>
               <span className="text-[10px] uppercase font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">
                 Core Service Catalogue Entry
               </span>
-              <h2 className="text-xl font-bold text-slate-900 mt-1">{selectedService.name}</h2>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mt-1">{selectedService.name}</h2>
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
                 {selectedService.shortDescription}
               </p>
             </div>
 
-            <div className="text-right shrink-0 bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <div className="text-right shrink-0 bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
               <span className="text-[10px] uppercase text-slate-400 block font-semibold">
                 Target Budget & Timeline:
               </span>
-              <div className="text-sm font-bold text-emerald-700">
+              <div className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
                 {selectedService.priceRangeEstimate}
               </div>
               <div className="text-xs text-slate-500">{selectedService.deliveryTimelineEstimate}</div>
@@ -128,15 +131,15 @@ export const Services: React.FC = () => {
 
           {/* Ideal Customer & Common Problems */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <div className="bg-slate-50/80 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+              <h3 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-brand-600" /> Ideal Customer Profile (ICP)
               </h3>
-              <p className="text-slate-700 leading-relaxed">{selectedService.idealCustomer}</p>
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{selectedService.idealCustomer}</p>
             </div>
 
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-              <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <div className="bg-slate-50/80 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+              <h3 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-600" /> Key Differentiators
               </h3>
               <ul className="space-y-1 text-slate-700">
@@ -181,7 +184,7 @@ export const Services: React.FC = () => {
 
           {/* Discovery Questions for BDE */}
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
-            <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <h3 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-1.5">
               <HelpCircle className="w-3.5 h-3.5 text-brand-600" /> Essential BDE Discovery & Qualification Questions
             </h3>
             <p className="text-[11px] text-slate-500 mb-2">
@@ -198,7 +201,7 @@ export const Services: React.FC = () => {
 
           {/* Objection Handling Playbook */}
           <div className="space-y-2 text-xs">
-            <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <h3 className="font-bold text-slate-900 dark:text-white text-xs uppercase tracking-wider flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-amber-600" /> Objection Handling Playbook
             </h3>
             <div className="space-y-2">

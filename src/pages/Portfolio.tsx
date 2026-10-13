@@ -75,7 +75,7 @@ export const Portfolio: React.FC = () => {
       module: 'Services Knowledge Library',
       route: '/services',
       description:
-        'Mastered detailed technical capabilities, discovery questions, objections handling, and indicative pricing across all 8 Nexora IT services.',
+        'Mastered detailed technical capabilities, discovery questions, objections handling, and indicative pricing across core Nexora IT service offerings.',
     },
     {
       num: 8,
@@ -98,16 +98,16 @@ export const Portfolio: React.FC = () => {
   return (
     <div className="space-y-8 max-w-5xl mx-auto pb-12">
       {/* Hero Header */}
-      <div className="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <div className="figma-card p-6 sm:p-10 rounded-2xl space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold">
           <Award className="w-3.5 h-3.5" /> BDE Sales Operations Portfolio Project
         </div>
 
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
           BDE Sales Operations & IT Services Proposal Portfolio
         </h1>
 
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
           A centralized, production-ready B2B Sales Operations Platform and Bidding Management System engineered by <strong>Keshav Sood</strong> for IT services, SaaS expansion, and international online client acquisition.
         </p>
 
@@ -140,9 +140,9 @@ export const Portfolio: React.FC = () => {
       </div>
 
       {/* Section 1: JD Responsibilities Mapping */}
-      <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div className="figma-card p-6 sm:p-8 rounded-2xl space-y-6">
         <div>
-          <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <Target className="w-5 h-5 text-brand-600" /> Target Job Description & Workflow Alignment
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -154,7 +154,7 @@ export const Portfolio: React.FC = () => {
           {jdResponsibilities.map((item) => (
             <div
               key={item.num}
-              className="p-4 bg-slate-50/70 rounded-xl border border-slate-200 flex flex-col justify-between space-y-3 hover:border-brand-300 transition"
+              className="p-4 bg-slate-50/80 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between space-y-3 hover:border-brand-400 transition"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1.5">
@@ -165,8 +165,8 @@ export const Portfolio: React.FC = () => {
                     {item.module}
                   </span>
                 </div>
-                <h3 className="font-bold text-slate-900 text-xs">{item.title}</h3>
-                <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
+                <h3 className="font-bold text-slate-900 dark:text-white text-xs">{item.title}</h3>
+                <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -183,42 +183,42 @@ export const Portfolio: React.FC = () => {
       </div>
 
       {/* Section 2: Technology Stack & Architectural Decisions */}
-      <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
-        <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+      <div className="figma-card p-6 sm:p-8 rounded-2xl space-y-6">
+        <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Code2 className="w-5 h-5 text-brand-600" /> Technology Stack & Engineering Architecture
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
           <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Frontend:</span>
-            <span className="font-bold text-slate-900">React 18 & TypeScript</span>
+            <span className="font-bold text-slate-900 dark:text-white">React 18 & TypeScript</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Strict typed models for leads, bids & proposals</p>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Styling:</span>
-            <span className="font-bold text-slate-900">Tailwind CSS</span>
+            <span className="font-bold text-slate-900 dark:text-white">Tailwind CSS</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Enterprise navy & clean B2B SaaS layout</p>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Persistence:</span>
-            <span className="font-bold text-slate-900">LocalStorage v1</span>
+            <span className="font-bold text-slate-900 dark:text-white">LocalStorage v1</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Automated seeding & JSON backup/restore</p>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Visuals:</span>
-            <span className="font-bold text-slate-900">Recharts & Lucide</span>
+            <span className="font-bold text-slate-900 dark:text-white">Recharts & Lucide</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Interactive data visual charts</p>
           </div>
         </div>
       </div>
 
       {/* Section 3: 3 Sample Proposal Previews */}
-      <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+      <div className="figma-card p-6 sm:p-8 rounded-2xl space-y-6">
         <div>
-          <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <FileText className="w-5 h-5 text-brand-600" /> Commercial Proposal Previews
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -263,7 +263,7 @@ export const Portfolio: React.FC = () => {
 
       {/* Section 4: End-to-End Sales Workflow Narrative */}
       <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-xs">
-        <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+        <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Workflow className="w-5 h-5 text-brand-600" /> BDE Operational Sales Lifecycle
         </h2>
         <div className="space-y-3 text-slate-700 leading-relaxed">

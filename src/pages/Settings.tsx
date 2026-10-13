@@ -61,8 +61,11 @@ export const Settings: React.FC = () => {
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
       <div>
-        <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-          <SettingsIcon className="w-5 h-5 text-brand-600" /> Settings & Workspace Data Management
+        <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+          <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+            <SettingsIcon className="w-5 h-5" />
+          </div>
+          Settings & Workspace Data Management
         </h1>
         <p className="text-xs text-slate-500 mt-0.5">
           Manage local persistent storage, backup and restore operational datasets, and review agency configurations.
@@ -70,24 +73,24 @@ export const Settings: React.FC = () => {
       </div>
 
       {/* Storage Information Card */}
-      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-4">
-        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+      <div className="figma-card p-6 rounded-2xl space-y-4">
+        <h2 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <HardDrive className="w-4 h-4 text-brand-600" /> Browser Storage Telemetry
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Storage Used:</span>
-            <span className="text-lg font-bold text-slate-900 mt-0.5 block">{usage.kb}</span>
+            <span className="text-lg font-bold text-slate-900 dark:text-white mt-0.5 block">{usage.kb}</span>
             <p className="text-[10px] text-slate-500 mt-0.5">HTML5 LocalStorage allocation</p>
           </div>
 
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Total Records:</span>
-            <span className="text-lg font-bold text-slate-900 mt-0.5 block">{usage.recordCount}</span>
+            <span className="text-lg font-bold text-slate-900 dark:text-white mt-0.5 block">{usage.recordCount}</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Leads, bids, contacts, proposals</p>
           </div>
 
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Schema Version:</span>
             <span className="text-lg font-bold text-brand-700 mt-0.5 block">v1.0.0</span>
             <p className="text-[10px] text-slate-500 mt-0.5">Persistent across browser refreshes</p>
@@ -104,7 +107,7 @@ export const Settings: React.FC = () => {
 
       {/* Backup & Restore Tools */}
       <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-4 text-xs">
-        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+        <h2 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Download className="w-4 h-4 text-brand-600" /> Backup & Restore Workspace
         </h2>
 
@@ -161,7 +164,7 @@ export const Settings: React.FC = () => {
 
       {/* Agency Profile */}
       <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-3 text-xs">
-        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+        <h2 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Building className="w-4 h-4 text-brand-600" /> Agency Profile — Nexora Digital Solutions
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-slate-600 pt-1">

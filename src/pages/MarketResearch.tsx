@@ -66,8 +66,11 @@ export const MarketResearch: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Search className="w-5 h-5 text-brand-600" /> B2B Market Research & Competitive Intel
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <Search className="w-5 h-5" />
+            </div>
+            B2B Market Research & Competitive Intel
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
             Identify selling opportunities, competitor positioning, and unique value differentiators across international verticals.
@@ -88,7 +91,7 @@ export const MarketResearch: React.FC = () => {
           <div
             key={record.id}
             onClick={() => setSelectedRecord(record)}
-            className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs hover:border-slate-300 cursor-pointer transition flex flex-col justify-between space-y-4"
+            className="figma-card figma-card-hover p-5 rounded-2xl cursor-pointer transition flex flex-col justify-between space-y-4"
           >
             <div>
               <div className="flex items-start justify-between gap-2 mb-2">
@@ -98,7 +101,7 @@ export const MarketResearch: React.FC = () => {
                 <span className="text-[11px] text-slate-400 font-mono">{record.researchDate}</span>
               </div>
 
-              <h3 className="font-bold text-slate-900 text-sm">{record.targetCustomerSegment}</h3>
+              <h3 className="font-bold text-slate-900 dark:text-white text-sm">{record.targetCustomerSegment}</h3>
               <p className="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
                 <Globe2 className="w-3.5 h-3.5 text-slate-400" /> {record.geography}
               </p>

@@ -53,8 +53,11 @@ export const Activities: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <CalendarCheck className="w-5 h-5 text-brand-600" /> CRM Activities & Follow-Up Management
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <CalendarCheck className="w-5 h-5" />
+            </div>
+            CRM Activities & Follow-Up Management
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
             Log calls, emails, LinkedIn messaging cadences, discovery calls, and manage upcoming reminders.
@@ -85,7 +88,7 @@ export const Activities: React.FC = () => {
       )}
 
       {/* Filter and Search */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex flex-col sm:flex-row gap-3 text-xs">
+      <div className="figma-card p-5 rounded-2xl flex flex-col sm:flex-row gap-3 text-xs">
         <div className="relative flex-1">
           <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
           <input
@@ -101,7 +104,7 @@ export const Activities: React.FC = () => {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-2 text-xs border rounded-lg bg-white"
+            className="px-3 py-2 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
           >
             <option value="all">All Activity Types</option>
             <option value="Call">Calls</option>
@@ -117,13 +120,13 @@ export const Activities: React.FC = () => {
       </div>
 
       {/* Activity Timeline List */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-2xs divide-y divide-slate-100">
+      <div className="figma-card rounded-2xl divide-y divide-slate-100 dark:divide-slate-800 overflow-hidden">
         {filteredActivities.map((act) => {
           const isOverdue =
             !act.completed && act.nextFollowUpDate && act.nextFollowUpDate <= todayStr;
 
           return (
-            <div key={act.id} className="p-4 sm:p-5 flex items-start gap-4 hover:bg-slate-50 transition">
+            <div key={act.id} className="p-4 sm:p-5 flex items-start gap-4 hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition">
               <button
                 onClick={() => toggleActivityCompleted(act.id)}
                 className={`mt-1 p-1 rounded-full transition ${
@@ -139,7 +142,7 @@ export const Activities: React.FC = () => {
               <div className="flex-1 space-y-2 text-xs">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-slate-900 bg-slate-100 px-2 py-0.5 rounded text-[11px]">
+                    <span className="font-bold text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-lg text-[11px] border border-slate-200/60 dark:border-slate-700">
                       {act.type}
                     </span>
                     <span className="font-bold text-brand-700 text-sm">

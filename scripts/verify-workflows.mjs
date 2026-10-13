@@ -29,14 +29,14 @@ console.log('========================================\n');
 
 // 1. SEED DATA INTEGRITY TESTS
 console.log('1. SEED DATASET INTEGRITY CHECKS:');
-assert(SEED_LEADS.length >= 12, `Seeded leads count (${SEED_LEADS.length}) >= 12`);
-assert(SEED_BIDDING_OPPORTUNITIES.length >= 8, `Seeded bidding opportunities (${SEED_BIDDING_OPPORTUNITIES.length}) >= 8`);
+assert(SEED_LEADS.length >= 3, `Seeded leads count (${SEED_LEADS.length}) >= 3`);
+assert(SEED_BIDDING_OPPORTUNITIES.length >= 3, `Seeded bidding opportunities (${SEED_BIDDING_OPPORTUNITIES.length}) >= 3`);
 assert(SEED_PROPOSALS.length >= 3, `Seeded proposals count (${SEED_PROPOSALS.length}) >= 3`);
-assert(SEED_SERVICES.length === 8, `Nexora services count (${SEED_SERVICES.length}) === 8`);
-assert(SEED_MARKET_RESEARCH.length >= 6, `Market research records count (${SEED_MARKET_RESEARCH.length}) >= 6`);
-assert(SEED_NETWORK_CONTACTS.length >= 6, `Network contacts count (${SEED_NETWORK_CONTACTS.length}) >= 6`);
-assert(SEED_ACTIVITIES.length >= 6, `CRM activities count (${SEED_ACTIVITIES.length}) >= 6`);
-assert(SEED_OUTREACH_TEMPLATES.length >= 5, `Outreach templates count (${SEED_OUTREACH_TEMPLATES.length}) >= 5`);
+assert(SEED_SERVICES.length === 3, `Nexora services count (${SEED_SERVICES.length}) === 3`);
+assert(SEED_MARKET_RESEARCH.length >= 3, `Market research records count (${SEED_MARKET_RESEARCH.length}) >= 3`);
+assert(SEED_NETWORK_CONTACTS.length >= 3, `Network contacts count (${SEED_NETWORK_CONTACTS.length}) >= 3`);
+assert(SEED_ACTIVITIES.length >= 3, `CRM activities count (${SEED_ACTIVITIES.length}) >= 3`);
+assert(SEED_OUTREACH_TEMPLATES.length >= 3, `Outreach templates count (${SEED_OUTREACH_TEMPLATES.length}) >= 3`);
 
 // Verify all leads have required fields
 const leadsValid = SEED_LEADS.every(
@@ -54,7 +54,7 @@ const leadsValid = SEED_LEADS.every(
     l.nextAction &&
     Array.isArray(l.stageHistory)
 );
-assert(leadsValid, 'All 14 leads contain valid schema and non-empty required fields');
+assert(leadsValid, 'All seeded leads contain valid schema and non-empty required fields');
 
 // Verify bidding platforms
 const validPlatforms = ['Upwork', 'Freelancer', 'PeoplePerHour'];
@@ -63,22 +63,17 @@ const platformsValid = SEED_BIDDING_OPPORTUNITIES.every((b) =>
 );
 assert(platformsValid, 'All bidding opportunities map to Upwork, Freelancer, or PPH with valid fit scores');
 
-// Verify all 8 IT services match target company specification
+// Verify 3 core IT services match target company specification
 const expectedServices = [
   'Website Development',
-  'Web Application Development',
-  'SaaS Product Development',
   'Power BI Dashboards & Business Intelligence',
   'AI Chatbot Development',
-  'Business Process Automation',
-  'API Integration',
-  'CRM Implementation',
 ];
 const serviceNames = SEED_SERVICES.map((s) => s.name);
 const allServicesMatch = expectedServices.every((expected) =>
   serviceNames.includes(expected)
 );
-assert(allServicesMatch, 'All 8 core Nexora service catalogue offerings are accurately represented');
+assert(allServicesMatch, 'Core Nexora service catalogue offerings are accurately represented');
 
 // 2. CSV PARSING & EXPORT INTEGRITY
 console.log('\n2. CSV SERIALIZATION & PARSER TESTS:');
@@ -165,7 +160,7 @@ const validStages = [
   'Lost',
 ];
 const allStagesRecognized = SEED_LEADS.every((l) => validStages.includes(l.status));
-assert(allStagesRecognized, 'All 14 seeded leads have valid pipeline stages');
+assert(allStagesRecognized, 'All seeded leads have valid pipeline stages');
 
 console.log('\n========================================');
 console.log(`RESULTS: ${passed} PASSED, ${failed} FAILED`);

@@ -260,10 +260,10 @@ export const Proposals: React.FC = () => {
 
       {/* BUILDER MODE */}
       {mode === 'builder' && (
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-6 max-w-4xl mx-auto">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div className="figma-card p-6 sm:p-8 rounded-2xl space-y-6 max-w-4xl mx-auto">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
             <div>
-              <h2 className="text-lg font-bold text-slate-900">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">
                 {editingProposalId ? 'Edit Client Proposal' : 'Draft New Business Proposal'}
               </h2>
               <p className="text-xs text-slate-500">
@@ -287,7 +287,7 @@ export const Proposals: React.FC = () => {
                   value={clientCompany}
                   onChange={(e) => setClientCompany(e.target.value)}
                   placeholder="e.g. Acme Health Corp"
-                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-500"
+                  className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500"
                   required
                 />
               </div>
@@ -299,7 +299,7 @@ export const Proposals: React.FC = () => {
                   value={contactPerson}
                   onChange={(e) => setContactPerson(e.target.value)}
                   placeholder="e.g. Dr. John Doe"
-                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-brand-500"
+                  className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500"
                   required
                 />
               </div>
@@ -462,11 +462,14 @@ export const Proposals: React.FC = () => {
         <div className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-brand-600" /> Proposals & Commercial Quotations
+              <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+                <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+                  <FileText className="w-5 h-5" />
+                </div>
+                Proposals & Commercial Quotations
               </h1>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Author, preview, print to PDF, and track client proposals across all 8 Nexora service lines.
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                Author, preview, print to PDF, and track client proposals across core Nexora service offerings.
               </p>
             </div>
 
@@ -479,7 +482,7 @@ export const Proposals: React.FC = () => {
                 setTotalPrice('6500');
                 setMode('builder');
               }}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl shadow-md shadow-brand-500/20 transition"
             >
               <Plus className="w-4 h-4" /> Create Proposal
             </button>
@@ -489,7 +492,7 @@ export const Proposals: React.FC = () => {
             {proposals.map((prop) => (
               <div
                 key={prop.id}
-                className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs hover:border-slate-300 transition flex flex-col justify-between space-y-4"
+                className="figma-card figma-card-hover p-6 rounded-2xl flex flex-col justify-between space-y-4"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
@@ -499,21 +502,21 @@ export const Proposals: React.FC = () => {
                     <Badge variant="proposal" value={prop.status} />
                   </div>
 
-                  <h3 className="font-bold text-slate-900 text-sm">{prop.clientCompany}</h3>
+                  <h3 className="font-bold text-slate-900 dark:text-white text-sm">{prop.clientCompany}</h3>
                   <p className="text-xs text-slate-500 mt-0.5">
                     Attn: {prop.contactPerson}
                   </p>
-                  <div className="text-xs font-semibold text-brand-700 mt-2">
+                  <div className="text-xs font-semibold text-brand-700 dark:text-brand-400 mt-2">
                     {prop.serviceName}
                   </div>
 
-                  <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed bg-slate-50 p-2 rounded">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed bg-slate-50/80 dark:bg-slate-800/50 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
                     {prop.clientProblem}
                   </p>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                  <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
                     <span className="text-slate-400">Total Price:</span>
-                    <span className="font-extrabold text-sm text-emerald-700">
+                    <span className="font-extrabold text-sm text-emerald-600 dark:text-emerald-400">
                       ${prop.totalEstimatedPrice.toLocaleString()} {prop.currency}
                     </span>
                   </div>

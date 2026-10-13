@@ -77,8 +77,11 @@ export const Reports: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-brand-600" /> BDE Sales Operations Analytics & Reports
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <BarChart3 className="w-5 h-5" />
+            </div>
+            BDE Sales Operations Analytics & Reports
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
             Real-time pipeline metrics, conversion velocity, platform attribution, and proposal health.
@@ -87,7 +90,7 @@ export const Reports: React.FC = () => {
       </div>
 
       {/* Analytics Insights */}
-      <div className="p-3 bg-slate-100/70 border border-slate-200 rounded-xl text-xs text-slate-700 flex items-start gap-2.5">
+      <div className="p-3.5 bg-brand-50/70 dark:bg-brand-950/20 border border-brand-200/60 dark:border-brand-900/40 rounded-2xl text-xs text-slate-700 dark:text-slate-300 flex items-start gap-3">
         <TrendingUp className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
         <div className="leading-relaxed">
           <strong>Sales Performance Intelligence:</strong> Stage conversion velocity, lead acquisition attribution, and bidding platform distribution calculated from active CRM pipeline records.
@@ -95,40 +98,40 @@ export const Reports: React.FC = () => {
       </div>
 
       {/* Funnel Conversion Ratios */}
-      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-4">
-        <h2 className="text-sm font-bold text-slate-900">BDE Stage Conversion Funnel Velocity</h2>
+      <div className="figma-card p-6 rounded-2xl space-y-4">
+        <h2 className="text-sm font-bold text-slate-900 dark:text-white">BDE Stage Conversion Funnel Velocity</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">
               Inquiry → Qualified
             </span>
-            <div className="text-2xl font-bold text-slate-900 mt-1">{leadToQualRate}%</div>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white mt-1">{leadToQualRate}%</div>
             <p className="text-[11px] text-slate-500 mt-0.5">
               {qualifiedLeads} qualified out of {totalLeads} prospects
             </p>
           </div>
 
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">
               Qualified → Meeting
             </span>
-            <div className="text-2xl font-bold text-slate-900 mt-1">{qualToMeetingRate}%</div>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white mt-1">{qualToMeetingRate}%</div>
             <p className="text-[11px] text-slate-500 mt-0.5">
               {meetingsScheduled} discovery demos set
             </p>
           </div>
 
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">
               Meeting → Proposal
             </span>
-            <div className="text-2xl font-bold text-slate-900 mt-1">{meetingToPropRate}%</div>
+            <div className="text-2xl font-bold text-slate-900 dark:text-white mt-1">{meetingToPropRate}%</div>
             <p className="text-[11px] text-slate-500 mt-0.5">
               {proposalsMade} formal quotations sent
             </p>
           </div>
 
-          <div className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+          <div className="bg-slate-50/80 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">
               Proposal → Won Deal
             </span>
@@ -143,8 +146,8 @@ export const Reports: React.FC = () => {
       {/* Analytics Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Industry Breakdown */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs">
-          <h3 className="text-sm font-bold text-slate-900 mb-1">Prospects by Target Industry</h3>
+        <div className="figma-card p-6 rounded-2xl">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Prospects by Target Industry</h3>
           <p className="text-xs text-slate-500 mb-4">Market vertical concentration</p>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -167,8 +170,8 @@ export const Reports: React.FC = () => {
         </div>
 
         {/* Lead Source Breakdown */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs">
-          <h3 className="text-sm font-bold text-slate-900 mb-1">Lead Acquisition Channel Share</h3>
+        <div className="figma-card p-6 rounded-2xl">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Lead Acquisition Channel Share</h3>
           <p className="text-xs text-slate-500 mb-4">Volume generated per sourcing channel</p>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -202,8 +205,8 @@ export const Reports: React.FC = () => {
         </div>
 
         {/* Bidding Platform Distribution */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs">
-          <h3 className="text-sm font-bold text-slate-900 mb-1">Bidding Opportunities by Portal</h3>
+        <div className="figma-card p-6 rounded-2xl">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Bidding Opportunities by Portal</h3>
           <p className="text-xs text-slate-500 mb-4">Upwork, Freelancer, and PeoplePerHour volume</p>
           <div className="h-60">
             <ResponsiveContainer width="100%" height="100%">
@@ -226,8 +229,8 @@ export const Reports: React.FC = () => {
         </div>
 
         {/* Proposal Pipeline Health */}
-        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs">
-          <h3 className="text-sm font-bold text-slate-900 mb-1">Proposal Quotations by Status</h3>
+        <div className="figma-card p-6 rounded-2xl">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Proposal Quotations by Status</h3>
           <p className="text-xs text-slate-500 mb-4">Active quotation pipeline health</p>
           <div className="h-60">
             <ResponsiveContainer width="100%" height="100%">

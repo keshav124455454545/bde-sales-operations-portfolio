@@ -140,33 +140,36 @@ export const Leads: React.FC = () => {
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Users className="w-5 h-5 text-brand-600" /> Lead & Prospect Database
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <Users className="w-5 h-5" />
+            </div>
+            Lead & Prospect Database
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
-            Manage target accounts, contact information, qualification criteria, and stage velocity.
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Central repository of targeted prospective client accounts, contact intelligence, and stage history.
           </p>
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={() => exportLeadsToCSV(filteredLeads)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-2xs transition"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xs transition"
             title="Export filtered records to CSV"
           >
-            <Download className="w-3.5 h-3.5 text-slate-600" /> Export CSV ({filteredLeads.length})
+            <Download className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" /> Export CSV ({filteredLeads.length})
           </button>
 
           <button
             onClick={() => setIsImportOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-2xs transition"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xs transition"
           >
-            <Upload className="w-3.5 h-3.5 text-slate-600" /> Import CSV
+            <Upload className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" /> Import CSV
           </button>
 
           <button
             onClick={() => setIsAddOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl shadow-md shadow-brand-500/20 transition"
           >
             <Plus className="w-4 h-4" /> Add Lead
           </button>
@@ -174,22 +177,22 @@ export const Leads: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3">
+      <div className="bg-white dark:bg-[#131c2e] p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 shadow-sm space-y-3.5 transition-all">
         <div className="flex flex-col md:flex-row gap-3">
           {/* Search */}
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
             <input
               type="text"
               placeholder="Search by company, decision maker, industry, or service..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full pl-10 pr-3.5 py-2 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800/90 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600 text-xs"
+                className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-xs"
               >
                 Clear
               </button>
@@ -197,19 +200,19 @@ export const Leads: React.FC = () => {
           </div>
 
           {/* Quick Stats Pill */}
-          <div className="flex items-center gap-2 text-xs text-slate-500 px-3 py-1.5 bg-slate-50 rounded-lg border border-slate-200 shrink-0">
-            <span>Showing: <strong className="text-slate-800">{filteredLeads.length}</strong> of {leads.length} leads</span>
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 px-3.5 py-2 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700/80 shrink-0">
+            <span>Showing: <strong className="text-slate-900 dark:text-white">{filteredLeads.length}</strong> of {leads.length} leads</span>
           </div>
         </div>
 
         {/* Dropdown Filters */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 pt-2 border-t border-slate-100 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Status</label>
+            <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Status</label>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Stages</option>
               <option value="New Lead">New Lead</option>
@@ -224,11 +227,11 @@ export const Leads: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Source</label>
+            <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Source</label>
             <select
               value={sourceFilter}
               onChange={(e) => setSourceFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Sources</option>
               <option value="LinkedIn">LinkedIn</option>
@@ -243,11 +246,11 @@ export const Leads: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Priority</label>
+            <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Priority</label>
             <select
               value={priorityFilter}
               onChange={(e) => setPriorityFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Priorities</option>
               <option value="Urgent">Urgent</option>
@@ -258,11 +261,11 @@ export const Leads: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Service</label>
+            <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Service</label>
             <select
               value={serviceFilter}
               onChange={(e) => setServiceFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Services</option>
               {services.map((s) => (
@@ -274,12 +277,12 @@ export const Leads: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-slate-500 mb-1">Sort By</label>
-            <div className="flex gap-1">
+            <label className="block text-[11px] font-semibold text-slate-500 dark:text-slate-400 mb-1">Sort By</label>
+            <div className="flex gap-1.5">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full px-2 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+                className="w-full px-2 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
               >
                 <option value="date">Date Added</option>
                 <option value="value">Deal Value</option>
@@ -288,10 +291,10 @@ export const Leads: React.FC = () => {
               </select>
               <button
                 onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                className="p-1.5 border border-slate-300 rounded-lg hover:bg-slate-100"
+                className="p-1.5 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition"
                 title={`Sort ${sortOrder === 'asc' ? 'Descending' : 'Ascending'}`}
               >
-                <ArrowUpDown className="w-3.5 h-3.5 text-slate-600" />
+                <ArrowUpDown className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
@@ -299,7 +302,7 @@ export const Leads: React.FC = () => {
       </div>
 
       {/* Leads Table */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-2xs overflow-hidden">
+      <div className="figma-card overflow-hidden">
         {filteredLeads.length === 0 ? (
           <EmptyState
             icon={Users}
@@ -312,18 +315,18 @@ export const Leads: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200 text-slate-600 font-semibold uppercase text-[10px] tracking-wider">
-                  <th className="py-3 px-4">Company & Decision Maker</th>
-                  <th className="py-3 px-4">Service of Interest</th>
-                  <th className="py-3 px-4">Source</th>
-                  <th className="py-3 px-4">Pipeline Stage</th>
-                  <th className="py-3 px-4">Priority</th>
-                  <th className="py-3 px-4 text-right">Est. Value</th>
-                  <th className="py-3 px-4">Next Follow-Up</th>
-                  <th className="py-3 px-4 text-right">Actions</th>
+                <tr className="bg-slate-50/80 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px] tracking-wider">
+                  <th className="py-3.5 px-4">Company & Decision Maker</th>
+                  <th className="py-3.5 px-4">Service of Interest</th>
+                  <th className="py-3.5 px-4">Source</th>
+                  <th className="py-3.5 px-4">Pipeline Stage</th>
+                  <th className="py-3.5 px-4">Priority</th>
+                  <th className="py-3.5 px-4 text-right">Est. Value</th>
+                  <th className="py-3.5 px-4">Next Follow-Up</th>
+                  <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {filteredLeads.map((lead) => {
                   const today = new Date().toISOString().slice(0, 10);
                   const isOverdue =
@@ -335,12 +338,12 @@ export const Leads: React.FC = () => {
                     <tr
                       key={lead.id}
                       onClick={() => setSelectedLeadId(lead.id)}
-                      className={`hover:bg-slate-50/80 cursor-pointer transition ${
-                        selectedLeadId === lead.id ? 'bg-brand-50/50' : ''
+                      className={`hover:bg-slate-50/80 dark:hover:bg-slate-800/40 cursor-pointer transition ${
+                        selectedLeadId === lead.id ? 'bg-brand-50/60 dark:bg-brand-950/30' : ''
                       }`}
                     >
-                      <td className="py-3 px-4">
-                        <div className="font-bold text-slate-900 flex items-center gap-1.5">
+                      <td className="py-3.5 px-4">
+                        <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
                           {lead.companyName}
                           {lead.website && (
                             <a
@@ -348,35 +351,35 @@ export const Leads: React.FC = () => {
                               target="_blank"
                               rel="noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="text-slate-400 hover:text-brand-600"
+                              className="text-slate-400 hover:text-brand-600 dark:hover:text-brand-400"
                             >
                               <ExternalLink className="w-3 h-3" />
                             </a>
                           )}
                         </div>
-                        <div className="text-slate-500 text-[11px] mt-0.5">
+                        <div className="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">
                           {lead.contactPerson} • {lead.jobTitle}
                         </div>
                       </td>
 
-                      <td className="py-3 px-4">
-                        <div className="font-medium text-slate-800">{lead.serviceOfInterest}</div>
+                      <td className="py-3.5 px-4">
+                        <div className="font-medium text-slate-800 dark:text-slate-200">{lead.serviceOfInterest}</div>
                         <div className="text-[11px] text-slate-400">{lead.industry}</div>
                       </td>
 
-                      <td className="py-3 px-4">
-                        <span className="text-[11px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                      <td className="py-3.5 px-4">
+                        <span className="text-[11px] text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/90 px-2 py-0.5 rounded-lg border border-slate-200 dark:border-slate-700">
                           {lead.source}
                         </span>
                       </td>
 
-                      <td className="py-3 px-4" onClick={(e) => e.stopPropagation()}>
+                      <td className="py-3.5 px-4" onClick={(e) => e.stopPropagation()}>
                         <select
                           value={lead.status}
                           onChange={(e) =>
                             updateLeadStage(lead.id, e.target.value as PipelineStage)
                           }
-                          className="text-xs bg-white border border-slate-200 rounded px-2 py-1 font-medium focus:ring-1 focus:ring-brand-500"
+                          className="text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1 font-medium text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
                         >
                           <option value="New Lead">New Lead</option>
                           <option value="Contacted">Contacted</option>
@@ -389,52 +392,52 @@ export const Leads: React.FC = () => {
                         </select>
                       </td>
 
-                      <td className="py-3 px-4">
+                      <td className="py-3.5 px-4">
                         <Badge variant="priority" value={lead.priority} />
                       </td>
 
-                      <td className="py-3 px-4 text-right font-semibold text-slate-900">
+                      <td className="py-3.5 px-4 text-right font-bold text-slate-900 dark:text-white">
                         ${lead.estimatedDealValue.toLocaleString()}
                       </td>
 
-                      <td className="py-3 px-4">
+                      <td className="py-3.5 px-4">
                         <div
                           className={`flex items-center gap-1 font-medium ${
-                            isOverdue ? 'text-rose-600 font-semibold' : 'text-slate-600'
+                            isOverdue ? 'text-rose-600 dark:text-rose-400 font-semibold' : 'text-slate-600 dark:text-slate-300'
                           }`}
                         >
                           <Clock className="w-3 h-3" />
                           <span>{lead.nextFollowUpDate}</span>
                         </div>
                         {isOverdue && (
-                          <span className="text-[10px] bg-rose-50 text-rose-600 px-1 rounded font-semibold">
+                          <span className="text-[10px] bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400 px-1.5 py-0.5 rounded font-semibold border border-rose-200 dark:border-rose-900/60 inline-block mt-0.5">
                             Overdue
                           </span>
                         )}
                       </td>
 
                       <td
-                        className="py-3 px-4 text-right"
+                        className="py-3.5 px-4 text-right"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <div className="flex items-center justify-end gap-1.5">
+                        <div className="flex items-center justify-end gap-1">
                           <button
                             onClick={() => setActivityLead(lead)}
-                            className="p-1 text-slate-500 hover:text-brand-600 hover:bg-slate-100 rounded"
+                            className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition"
                             title="Log CRM Activity"
                           >
                             <PhoneCall className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => setEditingLead(lead)}
-                            className="p-1 text-slate-500 hover:text-brand-600 hover:bg-slate-100 rounded"
+                            className="p-1.5 text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition"
                             title="Edit Lead Details"
                           >
                             <Edit className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => setDeletingLeadId(lead.id)}
-                            className="p-1 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded"
+                            className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition"
                             title="Delete Lead"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -461,13 +464,13 @@ export const Leads: React.FC = () => {
         >
           <div className="space-y-6">
             {/* Lead Status Bar */}
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-wrap items-center justify-between gap-3">
+            <div className="bg-slate-50 dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <Badge variant="stage" value={selectedLead.status} />
                 <Badge variant="priority" value={selectedLead.priority} />
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-slate-500 dark:text-slate-400">
                   Est. Value:{' '}
-                  <strong className="text-emerald-700 font-bold">
+                  <strong className="text-emerald-700 dark:text-emerald-400 font-bold">
                     ${selectedLead.estimatedDealValue.toLocaleString()} USD
                   </strong>
                 </span>
@@ -478,13 +481,13 @@ export const Leads: React.FC = () => {
                   onClick={() => {
                     navigate(`/proposals?new=true&leadId=${selectedLead.id}`);
                   }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition"
                 >
                   <FileText className="w-3.5 h-3.5" /> Draft Proposal
                 </button>
                 <button
                   onClick={() => setActivityLead(selectedLead)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 rounded-lg"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-600 rounded-lg transition"
                 >
                   <PhoneCall className="w-3.5 h-3.5" /> Log Touchpoint
                 </button>
@@ -493,81 +496,81 @@ export const Leads: React.FC = () => {
 
             {/* Grid details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-3">
-                <h4 className="font-bold text-slate-800 text-sm flex items-center gap-2">
-                  <Briefcase className="w-4 h-4 text-brand-600" /> Company & Contact Information
+              <div className="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+                <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm flex items-center gap-2">
+                  <Briefcase className="w-4 h-4 text-brand-600 dark:text-brand-400" /> Company & Contact Information
                 </h4>
-                <div className="space-y-2 text-slate-600">
+                <div className="space-y-2 text-slate-600 dark:text-slate-300">
                   <div>
-                    <span className="text-slate-400">Decision Maker:</span>{' '}
-                    <strong className="text-slate-900">{selectedLead.contactPerson}</strong> (
+                    <span className="text-slate-400 dark:text-slate-500">Decision Maker:</span>{' '}
+                    <strong className="text-slate-900 dark:text-white">{selectedLead.contactPerson}</strong> (
                     {selectedLead.jobTitle})
                   </div>
                   {selectedLead.email && (
                     <div className="flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-slate-400" />
-                      <a href={`mailto:${selectedLead.email}`} className="text-brand-600 hover:underline">
+                      <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
+                      <a href={`mailto:${selectedLead.email}`} className="text-brand-600 dark:text-brand-400 hover:underline">
                         {selectedLead.email}
                       </a>
                     </div>
                   )}
                   {selectedLead.phone && (
                     <div className="flex items-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-slate-400" />
+                      <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                       <span>{selectedLead.phone}</span>
                     </div>
                   )}
                   <div className="flex items-center gap-1.5">
-                    <Globe className="w-3.5 h-3.5 text-slate-400" />
+                    <Globe className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                     <a
                       href={selectedLead.website}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-brand-600 hover:underline truncate"
+                      className="text-brand-600 dark:text-brand-400 hover:underline truncate"
                     >
                       {selectedLead.website}
                     </a>
                   </div>
                   <div>
-                    <span className="text-slate-400">Location:</span> {selectedLead.city},{' '}
+                    <span className="text-slate-400 dark:text-slate-500">Location:</span> {selectedLead.city},{' '}
                     {selectedLead.country}
                   </div>
                   <div>
-                    <span className="text-slate-400">Company Size & Industry:</span>{' '}
+                    <span className="text-slate-400 dark:text-slate-500">Company Size & Industry:</span>{' '}
                     {selectedLead.companySize} • {selectedLead.industry}
                   </div>
                   <div>
-                    <span className="text-slate-400">Acquisition Source:</span>{' '}
-                    <span className="font-semibold text-slate-700">{selectedLead.source}</span>
+                    <span className="text-slate-400 dark:text-slate-500">Acquisition Source:</span>{' '}
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">{selectedLead.source}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-3">
-                <h4 className="font-bold text-slate-800 text-sm flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-brand-600" /> BDE Qualification & Next Steps
+              <div className="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+                <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-brand-600 dark:text-brand-400" /> BDE Qualification & Next Steps
                 </h4>
-                <div className="space-y-2 text-slate-600">
+                <div className="space-y-2 text-slate-600 dark:text-slate-300">
                   <div>
-                    <span className="text-slate-400">Service of Interest:</span>{' '}
-                    <span className="font-semibold text-brand-700">
+                    <span className="text-slate-400 dark:text-slate-500">Service of Interest:</span>{' '}
+                    <span className="font-semibold text-brand-700 dark:text-brand-400">
                       {selectedLead.serviceOfInterest}
                     </span>
                   </div>
                   <div>
-                    <span className="text-slate-400">Next Action Item:</span>{' '}
-                    <p className="font-medium text-slate-900 bg-amber-50 p-2 rounded border border-amber-200/60 mt-1">
+                    <span className="text-slate-400 dark:text-slate-500">Next Action Item:</span>{' '}
+                    <p className="font-medium text-slate-900 dark:text-slate-100 bg-amber-50 dark:bg-amber-950/30 p-2 rounded-lg border border-amber-200/60 dark:border-amber-900/60 mt-1">
                       {selectedLead.nextAction}
                     </p>
                   </div>
                   <div className="flex justify-between items-center pt-1">
                     <span>
-                      <span className="text-slate-400">Last Touch:</span>{' '}
+                      <span className="text-slate-400 dark:text-slate-500">Last Touch:</span>{' '}
                       {selectedLead.lastContactDate}
                     </span>
                     <span>
-                      <span className="text-slate-400">Follow-up Due:</span>{' '}
-                      <strong className="text-rose-600 font-semibold">
+                      <span className="text-slate-400 dark:text-slate-500">Follow-up Due:</span>{' '}
+                      <strong className="text-rose-600 dark:text-rose-400 font-semibold">
                         {selectedLead.nextFollowUpDate}
                       </strong>
                     </span>
@@ -577,23 +580,23 @@ export const Leads: React.FC = () => {
             </div>
 
             {/* Business Problem & Qualification Notes */}
-            <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-2 text-xs">
-              <h4 className="font-bold text-slate-800 text-sm">
+            <div className="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2 text-xs">
+              <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm">
                 Observed Business Pain & Opportunity
               </h4>
-              <p className="text-slate-700 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-100">
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-900/40 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
                 {selectedLead.businessProblem}
               </p>
               <div className="pt-2">
-                <span className="text-slate-400 font-semibold">BDE Qualification Notes:</span>
-                <p className="text-slate-600 mt-0.5">{selectedLead.qualificationNotes}</p>
+                <span className="text-slate-400 dark:text-slate-500 font-semibold">BDE Qualification Notes:</span>
+                <p className="text-slate-600 dark:text-slate-300 mt-0.5">{selectedLead.qualificationNotes}</p>
               </div>
             </div>
 
             {/* Stage History Timeline */}
-            <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-3">
-              <h4 className="font-bold text-slate-800 text-sm flex items-center gap-2">
-                <History className="w-4 h-4 text-brand-600" /> Pipeline Stage Progression History
+            <div className="bg-white dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+              <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm flex items-center gap-2">
+                <History className="w-4 h-4 text-brand-600 dark:text-brand-400" /> Pipeline Stage Progression History
               </h4>
               <div className="space-y-2.5">
                 {selectedLead.stageHistory.map((hist, idx) => (
@@ -601,13 +604,13 @@ export const Leads: React.FC = () => {
                     key={idx}
                     className="flex items-start gap-3 text-xs pl-2 border-l-2 border-brand-500 py-1"
                   >
-                    <div className="w-20 text-[11px] text-slate-400 font-mono shrink-0">
+                    <div className="w-20 text-[11px] text-slate-400 dark:text-slate-500 font-mono shrink-0">
                       {hist.date}
                     </div>
                     <div>
                       <Badge variant="stage" value={hist.stage} />
                       {hist.notes && (
-                        <p className="text-slate-600 mt-1 text-[11px]">{hist.notes}</p>
+                        <p className="text-slate-600 dark:text-slate-300 mt-1 text-[11px]">{hist.notes}</p>
                       )}
                     </div>
                   </div>

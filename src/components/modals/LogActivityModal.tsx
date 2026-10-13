@@ -92,13 +92,13 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Activity Type
             </label>
             <select
               value={type}
               onChange={(e) => setType(e.target.value as ActivityType)}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="Call">Call</option>
               <option value="Email">Email</option>
@@ -112,7 +112,7 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Related Category
             </label>
             <select
@@ -121,7 +121,7 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
                 setRelatedType(e.target.value as any);
                 setRelatedId('');
               }}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="Lead">CRM Lead</option>
               <option value="Contact">Network Contact</option>
@@ -133,13 +133,13 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
 
         {relatedType === 'Lead' && (
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Select Lead
             </label>
             <select
               value={relatedId}
               onChange={(e) => setRelatedId(e.target.value)}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="">-- Choose Lead --</option>
               {leads.map((l) => (
@@ -153,13 +153,13 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
 
         {relatedType === 'Contact' && (
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Select Contact
             </label>
             <select
               value={relatedId}
               onChange={(e) => setRelatedId(e.target.value)}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="">-- Choose Contact --</option>
               {networkContacts.map((c) => (
@@ -173,13 +173,13 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
 
         {relatedType === 'BiddingOpportunity' && (
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Select Bidding Job
             </label>
             <select
               value={relatedId}
               onChange={(e) => setRelatedId(e.target.value)}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="">-- Choose Opportunity --</option>
               {biddingOpportunities.map((b) => (
@@ -192,7 +192,7 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
         )}
 
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Activity Summary *
           </label>
           <textarea
@@ -200,15 +200,15 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
             value={summary}
             onChange={(e) => setSummary(e.target.value)}
             placeholder="What was discussed or accomplished during this interaction?"
-            className={`w-full px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 ${
-              error ? 'border-rose-400 bg-rose-50' : 'border-slate-300'
+            className={`w-full px-3 py-2 text-sm border rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 ${
+              error ? 'border-rose-400 bg-rose-50 dark:bg-rose-950/40 text-slate-900 dark:text-white' : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white'
             }`}
           />
           {error && <p className="text-xs text-rose-600 mt-0.5">{error}</p>}
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Outcome / Key Takeaway
           </label>
           <input
@@ -216,13 +216,13 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
             value={outcome}
             onChange={(e) => setOutcome(e.target.value)}
             placeholder="e.g. Budget approved, requested technical architecture diagram"
-            className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+            className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Next Action
             </label>
             <input
@@ -230,18 +230,18 @@ export const LogActivityModal: React.FC<LogActivityModalProps> = ({
               value={nextAction}
               onChange={(e) => setNextAction(e.target.value)}
               placeholder="e.g. Send formal proposal"
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Next Follow-Up Date
             </label>
             <input
               type="date"
               value={nextFollowUpDate}
               onChange={(e) => setNextFollowUpDate(e.target.value)}
-              className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full px-3 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
           </div>
         </div>

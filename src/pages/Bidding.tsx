@@ -138,24 +138,27 @@ export const Bidding: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Flame className="w-5 h-5 text-amber-500" /> Freelance Bidding Workspace
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400">
+              <Flame className="w-5 h-5" />
+            </div>
+            Freelance Bidding Workspace
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Track and prioritize high-value RFPs and postings across Upwork, Freelancer, and PeoplePerHour (PPH).
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={() => exportBiddingToCSV(filteredBids)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-lg shadow-2xs transition"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xs transition"
           >
-            <Download className="w-3.5 h-3.5" /> Export CSV ({filteredBids.length})
+            <Download className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" /> Export CSV ({filteredBids.length})
           </button>
           <button
             onClick={() => setIsAddOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl shadow-md shadow-brand-500/20 transition"
           >
             <Plus className="w-4 h-4" /> Track Opportunity
           </button>
@@ -163,15 +166,17 @@ export const Bidding: React.FC = () => {
       </div>
 
       {/* Strategy Guidelines */}
-      <div className="p-3 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-700 flex items-start gap-2.5">
-        <Briefcase className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
+      <div className="p-3.5 bg-brand-50/70 dark:bg-brand-950/20 border border-brand-200/60 dark:border-brand-900/40 rounded-2xl text-xs text-slate-700 dark:text-slate-300 flex items-start gap-3">
+        <div className="p-1 rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-400 shrink-0 mt-0.5">
+          <Briefcase className="w-4 h-4" />
+        </div>
         <div className="leading-relaxed">
-          <strong>Bidding Protocol & Quality Standards:</strong> Qualify RFP requirements, client verified spend history, and technical scope alignment before drafting customized proposals. Maintain minimum 85% technical fit threshold for fixed-price submissions.
+          <strong className="text-brand-900 dark:text-brand-200">Bidding Protocol & Quality Standards:</strong> Qualify RFP requirements, client verified spend history, and technical scope alignment before drafting customized proposals. Maintain minimum 85% technical fit threshold for fixed-price submissions.
         </div>
       </div>
 
       {/* Search and Filters */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3">
+      <div className="figma-card p-5 space-y-3.5">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
@@ -180,21 +185,21 @@ export const Bidding: React.FC = () => {
               placeholder="Search by job title, client description, or required tech stack..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
+              className="w-full pl-10 pr-3.5 py-2 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800/90 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             />
           </div>
-          <div className="flex items-center gap-2 text-xs text-slate-500 px-3 py-1.5 bg-slate-50 rounded-lg border border-slate-200 shrink-0">
-            <span>Showing: <strong className="text-slate-800">{filteredBids.length}</strong> of {biddingOpportunities.length} opportunities</span>
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 px-3.5 py-2 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700/80 shrink-0">
+            <span>Showing: <strong className="text-slate-900 dark:text-white">{filteredBids.length}</strong> of {biddingOpportunities.length} opportunities</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 border-t border-slate-100 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
           <div>
             <label className="block text-[11px] font-semibold text-slate-500 mb-1">Platform</label>
             <select
               value={platformFilter}
               onChange={(e) => setPlatformFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Platforms</option>
               <option value="Upwork">Upwork</option>
@@ -208,7 +213,7 @@ export const Bidding: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="all">All Statuses</option>
               <option value="Discovered">Discovered</option>
@@ -228,7 +233,7 @@ export const Bidding: React.FC = () => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
-              className="w-full px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg bg-white"
+              className="w-full px-2.5 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
             >
               <option value="fit">Fit Score (%)</option>
               <option value="deadline">Application Deadline</option>
@@ -240,7 +245,7 @@ export const Bidding: React.FC = () => {
             <label className="block text-[11px] font-semibold text-slate-500 mb-1">Order</label>
             <button
               onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-              className="w-full px-3 py-1.5 text-xs border border-slate-300 rounded-lg bg-white hover:bg-slate-50 flex items-center justify-between"
+              className="w-full px-3 py-1.5 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center justify-between transition"
             >
               <span>{sortOrder === 'desc' ? 'High to Low / Newest' : 'Low to High / Oldest'}</span>
               <ArrowUpDown className="w-3.5 h-3.5 text-slate-500" />
@@ -259,7 +264,7 @@ export const Bidding: React.FC = () => {
           onAction={() => setIsAddOpen(true)}
         />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredBids.map((bid) => {
             const today = new Date().toISOString().slice(0, 10);
             const isDeadlineClose = bid.applicationDeadline <= today;
@@ -267,7 +272,7 @@ export const Bidding: React.FC = () => {
             return (
               <div
                 key={bid.id}
-                className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs hover:border-slate-300 transition flex flex-col justify-between space-y-4"
+                className="figma-card figma-card-hover p-5 rounded-2xl flex flex-col justify-between space-y-4"
               >
                 <div>
                   {/* Top platform & fit score */}
@@ -293,11 +298,11 @@ export const Bidding: React.FC = () => {
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="font-bold text-slate-900 text-sm leading-snug line-clamp-2">
+                  <h3 className="font-bold text-slate-900 dark:text-white text-sm leading-snug line-clamp-2">
                     {bid.jobTitle}
                   </h3>
 
-                  <p className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed bg-slate-50/70 p-2.5 rounded-lg border border-slate-100">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-2.5 line-clamp-3 leading-relaxed bg-slate-50/80 dark:bg-slate-800/50 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
                     {bid.clientDescription}
                   </p>
 
@@ -306,7 +311,7 @@ export const Bidding: React.FC = () => {
                     {bid.requiredSkills.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium"
+                        className="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded-md font-medium border border-slate-200/60 dark:border-slate-700"
                       >
                         {skill}
                       </span>
@@ -314,18 +319,18 @@ export const Bidding: React.FC = () => {
                   </div>
 
                   {/* Budget & Commercial Info */}
-                  <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-100 text-xs">
+                  <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
                     <div>
-                      <span className="text-slate-400 block text-[10px] uppercase font-semibold">
+                      <span className="text-slate-400 dark:text-slate-500 block text-[10px] uppercase font-semibold">
                         Client Budget:
                       </span>
-                      <span className="font-semibold text-slate-800">{bid.clientBudget}</span>
+                      <span className="font-semibold text-slate-800 dark:text-slate-200">{bid.clientBudget}</span>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[10px] uppercase font-semibold">
+                      <span className="text-slate-400 dark:text-slate-500 block text-[10px] uppercase font-semibold">
                         Proposed Price:
                       </span>
-                      <span className="font-bold text-emerald-700">
+                      <span className="font-bold text-emerald-600 dark:text-emerald-400">
                         ${bid.proposedPrice.toLocaleString()} ({bid.projectType})
                       </span>
                     </div>
@@ -333,7 +338,7 @@ export const Bidding: React.FC = () => {
                 </div>
 
                 {/* Footer status and actions */}
-                <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
+                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
                   <div className="flex items-center justify-between text-xs">
                     <div className="flex items-center gap-1 text-slate-500">
                       <Clock className="w-3.5 h-3.5 text-slate-400" />
@@ -350,7 +355,7 @@ export const Bidding: React.FC = () => {
                       onChange={(e) =>
                         updateBiddingStatus(bid.id, e.target.value as BiddingStatus)
                       }
-                      className="text-xs border border-slate-300 rounded px-2 py-1 bg-white font-medium"
+                      className="text-xs border border-slate-200 dark:border-slate-700 rounded-lg px-2 py-1 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-medium focus:ring-1 focus:ring-brand-500"
                     >
                       <option value="Discovered">Discovered</option>
                       <option value="Researching">Researching</option>
@@ -376,7 +381,7 @@ export const Bidding: React.FC = () => {
                           )}`
                         );
                       }}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 rounded-lg border border-brand-200 transition"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-900/50 rounded-lg border border-brand-200 dark:border-brand-800 transition"
                     >
                       <FileText className="w-3.5 h-3.5" /> Draft Proposal Pitch
                     </button>
@@ -384,14 +389,14 @@ export const Bidding: React.FC = () => {
                     <div className="flex items-center gap-1">
                       <button
                         onClick={() => setEditingBid(bid)}
-                        className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded"
+                        className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition"
                         title="Edit Bid Details"
                       >
                         <Edit className="w-3.5 h-3.5" />
                       </button>
                       <button
                         onClick={() => setDeletingBidId(bid.id)}
-                        className="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded"
+                        className="p-1.5 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition"
                         title="Delete Bid"
                       >
                         <Trash2 className="w-3.5 h-3.5" />

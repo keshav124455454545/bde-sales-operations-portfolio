@@ -91,8 +91,11 @@ export const Network: React.FC = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Share2 className="w-5 h-5 text-brand-600" /> Network & Relationship Management
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <Share2 className="w-5 h-5" />
+            </div>
+            Network & Relationship Management
           </h1>
           <p className="text-xs text-slate-500 mt-0.5">
             Manage referral partners, agency collaborations, strategic tech alliances, and long-term business relationships.
@@ -108,7 +111,7 @@ export const Network: React.FC = () => {
       </div>
 
       {/* Filter and Search */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex flex-col sm:flex-row gap-3">
+      <div className="figma-card p-5 rounded-2xl flex flex-col sm:flex-row gap-3 text-xs">
         <div className="relative flex-1">
           <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
           <input
@@ -116,7 +119,7 @@ export const Network: React.FC = () => {
             placeholder="Search by contact name, partner agency, or industry..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-3 py-2 text-xs border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500"
+            className="w-full pl-10 pr-3.5 py-2 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800/90 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"
           />
         </div>
 
@@ -124,7 +127,7 @@ export const Network: React.FC = () => {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white"
+            className="px-3 py-2 text-xs border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:ring-1 focus:ring-brand-500"
           >
             <option value="all">All Relationship Types</option>
             <option value="Agency Partner">Agency Partner</option>
@@ -146,7 +149,7 @@ export const Network: React.FC = () => {
           return (
             <div
               key={contact.id}
-              className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs hover:border-slate-300 transition flex flex-col justify-between space-y-4"
+              className="figma-card figma-card-hover p-5 rounded-2xl flex flex-col justify-between space-y-4"
             >
               <div>
                 <div className="flex items-start justify-between gap-2 mb-2">
@@ -164,7 +167,7 @@ export const Network: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="font-bold text-slate-900 text-sm">{contact.contactName}</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white text-sm">{contact.contactName}</h3>
                 <p className="text-xs text-slate-600 font-medium">
                   {contact.jobTitle} • {contact.company}
                 </p>

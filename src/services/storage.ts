@@ -21,7 +21,7 @@ import {
   SEED_ICP_ACCOUNTS,
 } from '../data/seedData';
 
-const STORAGE_KEY = 'bde_sales_ops_data_v1';
+const STORAGE_KEY = 'bde_sales_ops_data_v3';
 
 export interface AppStateData {
   version: string;

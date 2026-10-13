@@ -158,10 +158,13 @@ export const Prospecting: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-            <Compass className="w-5 h-5 text-brand-600" /> LinkedIn & B2B Prospecting Workspace
+          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5 tracking-tight">
+            <div className="p-2 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+              <Compass className="w-5 h-5" />
+            </div>
+            LinkedIn & B2B Prospecting Workspace
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Structured manual prospecting workflow: ideal customer profile (ICP) scoring, verified research logs, and multi-touch outreach copywriting.
           </p>
         </div>
@@ -169,7 +172,7 @@ export const Prospecting: React.FC = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsAddAccountOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-xs transition"
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl shadow-md shadow-brand-500/20 transition"
           >
             <Plus className="w-4 h-4" /> Log Researched Account
           </button>
@@ -177,13 +180,13 @@ export const Prospecting: React.FC = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex border-b border-slate-200 gap-4 text-xs font-semibold">
+      <div className="flex border-b border-slate-200 dark:border-slate-800 gap-4 text-xs font-semibold">
         <button
           onClick={() => setActiveTab('accounts')}
           className={`pb-2.5 transition flex items-center gap-1.5 ${
             activeTab === 'accounts'
-              ? 'border-b-2 border-brand-600 text-brand-600 font-bold'
-              : 'text-slate-500 hover:text-slate-800'
+              ? 'border-b-2 border-brand-500 text-brand-600 dark:text-brand-400 font-bold'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
           }`}
         >
           <Building className="w-4 h-4" /> Researched Target Accounts ({icpAccounts.length})
@@ -192,8 +195,8 @@ export const Prospecting: React.FC = () => {
           onClick={() => setActiveTab('icp-builder')}
           className={`pb-2.5 transition flex items-center gap-1.5 ${
             activeTab === 'icp-builder'
-              ? 'border-b-2 border-brand-600 text-brand-600 font-bold'
-              : 'text-slate-500 hover:text-slate-800'
+              ? 'border-b-2 border-brand-500 text-brand-600 dark:text-brand-400 font-bold'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
           }`}
         >
           <Sliders className="w-4 h-4" /> 0–100 ICP Qualification Rubric
@@ -202,8 +205,8 @@ export const Prospecting: React.FC = () => {
           onClick={() => setActiveTab('templates')}
           className={`pb-2.5 transition flex items-center gap-1.5 ${
             activeTab === 'templates'
-              ? 'border-b-2 border-brand-600 text-brand-600 font-bold'
-              : 'text-slate-500 hover:text-slate-800'
+              ? 'border-b-2 border-brand-500 text-brand-600 dark:text-brand-400 font-bold'
+              : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white'
           }`}
         >
           <Sparkles className="w-4 h-4" /> Outreach Copywriting & Personalizer ({outreachTemplates.length})
@@ -211,7 +214,7 @@ export const Prospecting: React.FC = () => {
       </div>
 
       {/* Strategy Guidelines */}
-      <div className="p-3 bg-blue-50/70 border border-blue-200/60 rounded-xl text-xs text-blue-900 flex items-start gap-2.5">
+      <div className="p-3.5 bg-brand-50/70 dark:bg-brand-950/20 border border-brand-200/60 dark:border-brand-900/40 rounded-2xl text-xs text-slate-700 dark:text-slate-300 flex items-start gap-3">
         <Target className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
         <div className="leading-relaxed">
           <strong>Account Research & Qualification Protocol:</strong> Target decision-makers are identified via LinkedIn Sales Navigator, audited against our 0–100 Ideal Customer Profile (ICP) rubric, and engaged via tailored multi-touch value sequences.
@@ -228,13 +231,13 @@ export const Prospecting: React.FC = () => {
               return (
                 <div
                   key={account.id}
-                  className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs flex flex-col justify-between space-y-4 hover:border-slate-300 transition"
+                  className="figma-card figma-card-hover p-6 rounded-2xl flex flex-col justify-between space-y-4"
                 >
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div>
                         <div className="flex items-center gap-2">
-                          <h3 className="font-bold text-slate-900 text-sm">{account.targetCompany}</h3>
+                          <h3 className="font-bold text-slate-900 dark:text-white text-sm">{account.targetCompany}</h3>
                           <a
                             href={account.companyWebsite}
                             target="_blank"
@@ -263,22 +266,22 @@ export const Prospecting: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                    <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
                       <div>
                         <span className="text-slate-400 font-medium">Target Decision Maker:</span>{' '}
-                        <strong className="text-slate-800">{account.decisionMakerRole}</strong>
+                        <strong className="text-slate-800 dark:text-slate-200">{account.decisionMakerRole}</strong>
                       </div>
                       <div>
                         <span className="text-slate-400 font-medium">Relevant Nexora Service:</span>{' '}
-                        <span className="font-semibold text-brand-700">
+                        <span className="font-semibold text-brand-700 dark:text-brand-400">
                           {account.relevantService}
                         </span>
                       </div>
-                      <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                      <div className="bg-slate-50/80 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
                         <span className="text-slate-400 font-semibold block mb-0.5 text-[10px] uppercase tracking-wide">
                           Observed Need / Technology Bottleneck:
                         </span>
-                        <p className="text-slate-700 text-xs">{account.observedBusinessNeed}</p>
+                        <p className="text-slate-700 dark:text-slate-300 text-xs">{account.observedBusinessNeed}</p>
                       </div>
 
                       <div>
@@ -299,7 +302,7 @@ export const Prospecting: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
                     <div className="text-slate-500 truncate max-w-[220px]">
                       <strong className="text-slate-700">Next Action:</strong> {account.nextOutreachAction}
                     </div>
@@ -331,17 +334,17 @@ export const Prospecting: React.FC = () => {
 
       {/* TAB 2: ICP QUALIFICATION BUILDER */}
       {activeTab === 'icp-builder' && (
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-2xs space-y-6">
+        <div className="figma-card p-6 sm:p-8 rounded-2xl space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">
                 Nexora Ideal Customer Profile (ICP) Scoring Engine
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
                 Calculate an objective 0–100 score before investing sales outreach hours on a prospective account.
               </p>
             </div>
-            <div className="flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+            <div className="flex items-center gap-3 bg-slate-50 dark:bg-slate-800/70 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700">
               <span className="text-xs font-medium text-slate-600">Calculated Score:</span>
               <span className={`text-2xl font-extrabold ${totalCalculatedScore >= 80 ? 'text-emerald-600' : 'text-amber-600'}`}>
                 {totalCalculatedScore}/100
@@ -455,7 +458,7 @@ export const Prospecting: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between">
+          <div className="bg-slate-50 dark:bg-slate-800/60 p-4 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between">
             <div className="text-xs text-slate-600">
               Ready to log an account with this test score? Click below to record it into your prospecting database.
             </div>
@@ -473,7 +476,7 @@ export const Prospecting: React.FC = () => {
       {activeTab === 'templates' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Template Selector */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-2">
+          <div className="figma-card p-4 rounded-2xl space-y-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
               Outreach Script Library
             </h3>
@@ -498,7 +501,7 @@ export const Prospecting: React.FC = () => {
           </div>
 
           {/* Interactive Personalizer & Live Preview */}
-          <div className="lg:col-span-2 bg-white p-5 rounded-xl border border-slate-200 shadow-2xs flex flex-col space-y-4">
+          <div className="lg:col-span-2 figma-card p-6 rounded-2xl flex flex-col space-y-4">
             <div>
               <h3 className="text-sm font-bold text-slate-900">{selectedTemplate.title}</h3>
               <p className="text-xs text-slate-500 mt-0.5">{selectedTemplate.description}</p>
@@ -508,7 +511,7 @@ export const Prospecting: React.FC = () => {
             </div>
 
             {/* Variable Inputs */}
-            <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
+            <div className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
               <div>
                 <label className="block text-[10px] font-semibold text-slate-500 mb-0.5">Prospect Name</label>
                 <input

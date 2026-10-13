@@ -33,7 +33,7 @@ Every responsibility from the standard IT Services Business Development Executiv
 | **4** | Build and maintain a strong sales pipeline | 8-stage interactive Kanban board with velocity tracking | `/#/pipeline` |
 | **5** | Conduct market research to identify possibilities | 7-step market discovery worksheet & competitor gap matrix | `/#/market-research` |
 | **6** | Develop & manage business-development networks | Relationship directory for referral & technology partners | `/#/network` |
-| **7** | Maintain knowledge of company IT service offerings | Comprehensive 8-service catalogue with objection handling scripts | `/#/services` |
+| **7** | Maintain knowledge of company IT service offerings | Core service catalogue with qualification questions and objection handling scripts | `/#/services` |
 | **8** | Write new business proposals | Executive proposal builder with `@media print` PDF layout | `/#/proposals` |
 | **9** | Keep client database and CRM updated | CRM lead database with CSV import/export & activity logs | `/#/leads` |
 
@@ -44,14 +44,9 @@ Every responsibility from the standard IT Services Business Development Executiv
 - **Headquarters**: Phase 8B, Industrial Area, Mohali, Punjab 160055, India
 - **Target Export Markets**: United States, United Kingdom, Nordics (Norway, Sweden), DACH (Germany), UAE, and Australia
 - **Core IT Service Offerings**:
-  1. Website Development (Next.js, Headless CMS, Core Web Vitals)
-  2. Web Application Development (React, Node.js, Python FastAPI, PostgreSQL)
-  3. SaaS Product Development (Multi-tenant architecture, Stripe Billing)
-  4. Power BI Dashboards & Business Intelligence (Star-Schema DAX, ETL pipelines)
-  5. AI Chatbot Development (RAG architecture, vector databases, WhatsApp widgets)
-  6. Business Process Automation (Make.com, n8n, automated OCR parsing)
-  7. API Integration (Secure REST/GraphQL middleware, rate-limiting)
-  8. CRM Implementation (HubSpot, Zoho CRM pipeline configuration)
+  1. Website & Web Application Development (React, Next.js, TypeScript, Headless CMS, Core Web Vitals)
+  2. Power BI Analytics & Executive KPI Dashboards (Star-Schema DAX, Azure ETL pipelines, Real-time Reporting)
+  3. AI Chatbot & Intelligent Customer Support Systems (RAG architecture, Vector search, WhatsApp widgets)
 
 ---
 
