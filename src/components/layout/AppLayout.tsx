@@ -70,16 +70,16 @@ export const AppLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800">
-      {/* Simulation Banner */}
+      {/* Header Banner */}
       <div className="bg-navy-950 text-slate-300 px-3 sm:px-4 py-1.5 text-xs flex flex-wrap items-center justify-between border-b border-navy-900 no-print z-30">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="font-semibold text-white tracking-wide">Nexora Digital Solutions</span>
-          <span className="text-slate-400 hidden sm:inline">• BDE Sales Operations Portfolio</span>
+          <span className="text-slate-400 hidden sm:inline">• BDE Sales Operations Suite</span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="inline-flex items-center gap-1 text-[11px] text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/40">
-            <ShieldAlert className="w-3 h-3" /> Fictional Demonstration
+          <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Active Operations
           </span>
           <NavLink
             to="/portfolio"
@@ -370,9 +370,9 @@ export const AppLayout: React.FC = () => {
         isOpen={isResetConfirmOpen}
         onClose={() => setIsResetConfirmOpen(false)}
         onConfirm={resetData}
-        title="Reset Demo Dataset?"
-        message="This action will restore all fictional leads, bidding opportunities, proposals, and CRM records back to default starting states."
-        confirmLabel="Reset to Default Demo"
+        title="Reset Workspace Dataset?"
+        message="This action will restore all leads, bidding opportunities, proposals, and CRM records back to default starting states."
+        confirmLabel="Reset to Default"
         isDestructive={true}
       />
       <ToastContainer />

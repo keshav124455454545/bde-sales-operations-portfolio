@@ -278,7 +278,7 @@ export function parseLeadsCSV(csvText: string): { imported: Lead[]; errors: stri
     const newLead: Lead = {
       id: `lead-import-${Date.now()}-${i}`,
       companyName,
-      website: 'https://example.com',
+      website: companyName ? `https://${companyName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com` : 'https://linkedin.com',
       industry: (industryIdx !== -1 && cols[industryIdx]?.trim()) || 'Technology & Services',
       companySize: '10-50 employees',
       country: 'International',

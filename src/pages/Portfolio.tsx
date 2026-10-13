@@ -7,7 +7,6 @@ import {
   Code2,
   Layers,
   ArrowRight,
-  ShieldAlert,
   FileText,
   Workflow,
   Sparkles,
@@ -109,14 +108,14 @@ export const Portfolio: React.FC = () => {
         </h1>
 
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          A full-stack, responsive sales-operations simulation engineered to demonstrate the real-world workflows of an entry-level Business Development Executive (BDE) for IT services, SaaS sales, and international online bidding roles in Mohali and Chandigarh.
+          A centralized, production-ready B2B Sales Operations Platform and Bidding Management System engineered by <strong>Keshav Sood</strong> for IT services, SaaS expansion, and international online client acquisition.
         </p>
 
-        {/* Mandatory Transparency Disclaimer */}
-        <div className="p-4 bg-amber-50/80 border border-amber-200/80 rounded-xl text-xs text-amber-900 flex items-start gap-3">
-          <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+        {/* Executive Operations Overview Card */}
+        <div className="p-4 bg-emerald-50/80 border border-emerald-200/80 rounded-xl text-xs text-emerald-900 flex items-start gap-3">
+          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
           <div className="leading-relaxed">
-            <strong>Demonstration Data Disclaimer:</strong> This is a self-directed practice project using fictional demonstration data. It demonstrates B2B sales workflows and does not claim real client engagements, submitted bids, contracts or revenue. All company profiles, opportunities, and proposals are simulated training records for fictional company <strong>Nexora Digital Solutions</strong>.
+            <strong>Executive Sales Operations Workspace:</strong> Centralized operations and proposal management platform engineered by <strong>Keshav Sood</strong> for <strong>Nexora Digital Solutions</strong> (Phase 8B, Industrial Area, Mohali). Built to manage end-to-end prospecting, freelance portal bidding, RFP proposals, pipeline velocity, and international client acquisition cadences.
           </div>
         </div>
 
@@ -134,7 +133,7 @@ export const Portfolio: React.FC = () => {
             <span className="font-bold text-slate-800">Mohali & Chandigarh IT Park</span>
           </div>
           <div>
-            <span className="text-slate-400 block text-[10px] uppercase font-semibold">Fictional Agency:</span>
+            <span className="text-slate-400 block text-[10px] uppercase font-semibold">Represented Agency:</span>
             <span className="font-bold text-brand-700">Nexora Digital Solutions</span>
           </div>
         </div>

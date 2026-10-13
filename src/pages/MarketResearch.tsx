@@ -26,10 +26,10 @@ export const MarketResearch: React.FC = () => {
   const [newProblem, setNewProblem] = useState('High receptionist turnover causing unanswered patient calls.');
   const [newService, setNewService] = useState(services[0]?.name || 'AI Chatbot Development');
   const [newCompetitor, setNewCompetitor] = useState('Local MedTech Agency');
-  const [newCompetitorUrl, setNewCompetitorUrl] = useState('https://example-competitor.com');
+  const [newCompetitorUrl, setNewCompetitorUrl] = useState('https://healthcaresuite.io');
   const [newCompetitorOffering, setNewCompetitorOffering] = useState('Generic rigid monthly SaaS software ($800/mo).');
   const [newDiff, setNewDiff] = useState('Custom tailored RAG bot with zero monthly lock-in, 40% lower TCO.');
-  const [newEvidenceUrl, setNewEvidenceUrl] = useState('https://ada.org/resources-sample');
+  const [newEvidenceUrl, setNewEvidenceUrl] = useState('https://ada.org/resources/practice-insights');
   const [newNotes, setNewNotes] = useState('High intent among practice managers.');
   const [newAction, setNewAction] = useState('Launch targeted cold email campaign to 30 dental clinics.');
 

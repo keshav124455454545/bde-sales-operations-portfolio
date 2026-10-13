@@ -280,9 +280,9 @@ export const ProposalDocument: React.FC<ProposalDocumentProps> = ({
           </div>
         </div>
 
-        {/* Simulation Footer */}
+        {/* Corporate Footer */}
         <div className="mt-12 pt-4 border-t border-slate-200 text-[10px] text-center text-slate-400">
-          This document is generated for demonstration and portfolio practice by Nexora Digital Solutions.
+          Nexora Digital Solutions Pvt. Ltd. • Commercial Engagement Proposal • Confidential & Proprietary
         </div>
       </div>
     </div>

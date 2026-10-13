@@ -112,7 +112,7 @@ export const Bidding: React.FC = () => {
     addBiddingOpportunity({
       platform: newPlatform,
       jobTitle: newTitle.trim(),
-      jobUrl: newUrl.trim() || `https://${newPlatform.toLowerCase()}.com/jobs/simulated-${Date.now()}`,
+      jobUrl: newUrl.trim() || `https://${newPlatform.toLowerCase()}.com/jobs/~${Date.now().toString(36)}`,
       clientDescription: newDesc.trim(),
       clientCountry: newCountry.trim(),
       requiredSkills: skillsArray,
@@ -162,11 +162,11 @@ export const Bidding: React.FC = () => {
         </div>
       </div>
 
-      {/* Methodology Disclaimer */}
-      <div className="p-3 bg-amber-50/80 border border-amber-200/70 rounded-xl text-xs text-amber-900 flex items-start gap-2.5">
-        <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+      {/* Strategy Guidelines */}
+      <div className="p-3 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-700 flex items-start gap-2.5">
+        <Briefcase className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
         <div className="leading-relaxed">
-          <strong>Bidding Simulation Notice:</strong> Fictional demonstration scenarios designed to practice online proposal writing, requirement vetting, and deadline tracking for Mohali/Chandigarh IT bidding executives. Does not connect to live freelance APIs or submit automated bids.
+          <strong>Bidding Protocol & Quality Standards:</strong> Qualify RFP requirements, client verified spend history, and technical scope alignment before drafting customized proposals. Maintain minimum 85% technical fit threshold for fixed-price submissions.
         </div>
       </div>
 

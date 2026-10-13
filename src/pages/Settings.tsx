@@ -65,7 +65,7 @@ export const Settings: React.FC = () => {
           <SettingsIcon className="w-5 h-5 text-brand-600" /> Settings & Workspace Data Management
         </h1>
         <p className="text-xs text-slate-500 mt-0.5">
-          Manage local persistent storage, backup and restore datasets, and review fictional company configurations.
+          Manage local persistent storage, backup and restore operational datasets, and review agency configurations.
         </p>
       </div>
 
@@ -97,7 +97,7 @@ export const Settings: React.FC = () => {
         <div className="text-xs text-slate-500 leading-relaxed bg-blue-50/60 p-3 rounded-lg border border-blue-200/50 flex items-start gap-2">
           <Info className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
           <span>
-            <strong>Browser Storage Notice:</strong> Application data is securely stored inside your local browser. If you switch devices or clear your browser cache, you can export and re-import your practice records anytime using the backup tools below.
+            <strong>Local Storage Notice:</strong> Application data is securely stored inside your local browser. If you switch devices or clear your browser cache, you can export and re-import your operations data anytime using the backup tools below.
           </span>
         </div>
       </div>
@@ -125,7 +125,7 @@ export const Settings: React.FC = () => {
           <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
             <h3 className="font-bold text-slate-800 text-xs">Restore Backup (JSON)</h3>
             <p className="text-slate-600 text-[11px] leading-relaxed">
-              Select a previously exported JSON backup file to restore your customized practice data.
+              Select a previously exported JSON backup file to restore your customized operations data.
             </p>
             <input
               type="file"
@@ -138,15 +138,15 @@ export const Settings: React.FC = () => {
         </div>
       </div>
 
-      {/* Danger Zone: Reset to Factory Seed Data */}
+      {/* Danger Zone: Reset to Baseline Seed Data */}
       <div className="bg-white p-5 rounded-xl border border-rose-200 shadow-2xs space-y-3 text-xs">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-sm font-bold text-rose-900 flex items-center gap-2">
-              <RefreshCw className="w-4 h-4 text-rose-600" /> Reset to Initial Demonstration Dataset
+              <RefreshCw className="w-4 h-4 text-rose-600" /> Reset to Baseline Operations Dataset
             </h2>
             <p className="text-slate-500 mt-0.5 text-xs">
-              Restore all fictional leads, bidding opportunities, proposals, and CRM records back to their factory seed defaults.
+              Restore all leads, bidding opportunities, proposals, and CRM records back to standard baseline defaults.
             </p>
           </div>
 
@@ -159,10 +159,10 @@ export const Settings: React.FC = () => {
         </div>
       </div>
 
-      {/* Fictional Company Profile */}
+      {/* Agency Profile */}
       <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs space-y-3 text-xs">
         <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Building className="w-4 h-4 text-brand-600" /> Fictional Company Profile
+          <Building className="w-4 h-4 text-brand-600" /> Agency Profile — Nexora Digital Solutions
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-slate-600 pt-1">
           <div>

@@ -97,7 +97,7 @@ export const Pipeline: React.FC = () => {
             <span className="text-lg font-extrabold text-emerald-600">
               ${stats.pipelineValue.toLocaleString()} USD
             </span>
-            <span className="text-[10px] text-slate-400 block">Illustrative estimate</span>
+            <span className="text-[10px] text-slate-400 block">Weighted pipeline total</span>
           </div>
 
           <div className="border-l border-slate-200 pl-6">

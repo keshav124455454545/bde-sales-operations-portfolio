@@ -52,7 +52,7 @@ export const Prospecting: React.FC = () => {
   const [newCompany, setNewCompany] = useState('');
   const [newIndustry, setNewIndustry] = useState('Healthcare');
   const [newGeography, setNewGeography] = useState('United States');
-  const [newWebsite, setNewWebsite] = useState('https://example.com');
+  const [newWebsite, setNewWebsite] = useState('');
   const [newRole, setNewRole] = useState('VP of Operations');
   const [newObservedNeed, setNewObservedNeed] = useState('');
   const [newService, setNewService] = useState(services[0]?.name || 'Website Development');
@@ -136,7 +136,7 @@ export const Prospecting: React.FC = () => {
       targetIndustry: newIndustry,
       targetGeography: newGeography,
       companyWebsite: newWebsite.trim(),
-      profileUrl: `https://linkedin.com/company/${newCompany.toLowerCase().replace(/\s+/g, '-')}-fictional`,
+      profileUrl: `https://linkedin.com/company/${newCompany.toLowerCase().replace(/\s+/g, '-')}`,
       decisionMakerRole: newRole.trim(),
       observedBusinessNeed: newObservedNeed.trim(),
       relevantService: newService,
@@ -210,11 +210,11 @@ export const Prospecting: React.FC = () => {
         </button>
       </div>
 
-      {/* Disclaimer Box */}
+      {/* Strategy Guidelines */}
       <div className="p-3 bg-blue-50/70 border border-blue-200/60 rounded-xl text-xs text-blue-900 flex items-start gap-2.5">
-        <Info className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+        <Target className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
         <div className="leading-relaxed">
-          <strong>BDE Methodology Note:</strong> This workspace demonstrates disciplined manual account research. Nexora BDEs do not use automated scrapers or bypass platform terms. Decision-makers are identified via targeted search filters, vetted against our ICP scoring rubric, and contacted via personalized multi-channel cadences.
+          <strong>Account Research & Qualification Protocol:</strong> Target decision-makers are identified via LinkedIn Sales Navigator, audited against our 0–100 Ideal Customer Profile (ICP) rubric, and engaged via tailored multi-touch value sequences.
         </div>
       </div>
 
@@ -634,6 +634,7 @@ export const Prospecting: React.FC = () => {
                 type="text"
                 value={newWebsite}
                 onChange={(e) => setNewWebsite(e.target.value)}
+                placeholder="https://company.com"
                 className="w-full px-3 py-2 border rounded-lg"
               />
             </div>

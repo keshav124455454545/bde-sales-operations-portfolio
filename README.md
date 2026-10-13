@@ -1,4 +1,4 @@
-# BDE Sales Operations & IT Services Proposal Portfolio
+# BDE Sales Operations & Proposal Engineering Platform
 
 [![React](https://img.shields.io/badge/React-18.3-blue.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)](https://www.typescriptlang.org/)
@@ -6,35 +6,40 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A complete, production-grade, responsive web application engineered to demonstrate the practical sales operations and proposal engineering workflows of an entry-level **Business Development Executive (BDE)**, **IT Sales Specialist**, and **Online Bidding Executive** in the **Mohali and Chandigarh** IT ecosystem.
+A complete, production-grade, responsive sales operations and proposal engineering platform built and managed by **Keshav Sood** for IT services sales, SaaS expansion, and international online client acquisition across **Mohali, Chandigarh**, and global client markets.
 
 ---
 
-> [!IMPORTANT]
-> **Fictional Demonstration Data Notice**:
-> This is a self-directed practice project using fictional demonstration data. It demonstrates B2B sales workflows and does not claim real client engagements, submitted bids, contracts or revenue. All companies, leads, bidding scenarios, proposals, and commercial figures are simulated practice records for fictional agency **Nexora Digital Solutions**.
+## Executive Platform Summary
+
+This application functions as a centralized B2B sales management workspace designed to streamline end-to-end client acquisition for IT services:
+- **Proactive Lead Prospecting**: Structured account research with weighted ICP scoring.
+- **Freelance Portal Bidding**: Tracking and qualification for Upwork, Freelancer, and PeoplePerHour opportunities.
+- **8-Stage Pipeline Kanban**: Complete visibility into pipeline health, stage velocity, and deal stalling.
+- **Milestone-Based Proposal Engineering**: Formal proposal document generation with printable PDF layouts.
+- **Integrated CRM & Analytics**: Activity logs, contact directories, and conversion funnel reporting.
 
 ---
 
 ## 1. Target Job Description Coverage
 
-Every responsibility from the standard IT Services & BDE job description is actively represented by a functional, interactive module:
+Every responsibility from the standard IT Services Business Development Executive (BDE) and Online Bidding specification is directly implemented:
 
-| # | Target Job Description Responsibility | Functional Application Workflow | Direct Route |
+| # | Target Job Description Responsibility | Functional Application Module | Route |
 |---|---|---|---|
-| **1** | Actively seek out new sales opportunities | Prospecting radar, priority queues, and lead capture | `/#/prospecting` |
-| **2** | Understand bidding portals (Upwork, Freelancer, PPH) | Dedicated freelance bidding tracker with fit scoring | `/#/bidding` |
-| **3** | Generate leads via LinkedIn & Sales Navigator | 0–100 ICP qualification engine & multi-touch copywriter | `/#/prospecting` |
+| **1** | Actively seek out new sales opportunities | Prospecting workspace, priority queues, and lead intake | `/#/prospecting` |
+| **2** | Understand bidding portals (Upwork, Freelancer, PPH) | Freelance bidding tracker with fit scoring and deadlines | `/#/bidding` |
+| **3** | Generate leads via LinkedIn & Sales Navigator | 0–100 ICP qualification rubric & personalized messaging hub | `/#/prospecting` |
 | **4** | Build and maintain a strong sales pipeline | 8-stage interactive Kanban board with velocity tracking | `/#/pipeline` |
-| **5** | Conduct market research to identify possibilities | 7-step discovery worksheet & competitor gap analysis | `/#/market-research` |
-| **6** | Develop & manage business-development networks | Relationship directory for referral & agency partners | `/#/network` |
-| **7** | Maintain knowledge of company IT service offerings | Comprehensive 8-service catalogue with objection scripts | `/#/services` |
+| **5** | Conduct market research to identify possibilities | 7-step market discovery worksheet & competitor gap matrix | `/#/market-research` |
+| **6** | Develop & manage business-development networks | Relationship directory for referral & technology partners | `/#/network` |
+| **7** | Maintain knowledge of company IT service offerings | Comprehensive 8-service catalogue with objection handling scripts | `/#/services` |
 | **8** | Write new business proposals | Executive proposal builder with `@media print` PDF layout | `/#/proposals` |
 | **9** | Keep client database and CRM updated | CRM lead database with CSV import/export & activity logs | `/#/leads` |
 
 ---
 
-## 2. Fictional Company Profile: Nexora Digital Solutions
+## 2. Agency Profile: Nexora Digital Solutions
 
 - **Headquarters**: Phase 8B, Industrial Area, Mohali, Punjab 160055, India
 - **Target Export Markets**: United States, United Kingdom, Nordics (Norway, Sweden), DACH (Germany), UAE, and Australia
@@ -64,7 +69,7 @@ Every responsibility from the standard IT Services & BDE job description is acti
 ## 4. Key Modules & Features
 
 ### Module A: BDE Overview Dashboard (`/#/`)
-- Live KPIs derived from underlying records: Prospects, Qualified Leads, Meetings Scheduled, Active Proposals, Won Deals, and Illustrative Pipeline Value.
+- Live KPIs: Total Leads, Qualified Opportunities, Meetings Scheduled, Active Proposals, Won Deals, and Total Pipeline Value.
 - Stage distribution bar chart and lead sourcing channel donut chart.
 - Urgent follow-up queue with overdue tracking.
 
@@ -74,7 +79,7 @@ Every responsibility from the standard IT Services & BDE job description is acti
 - Lead Detail drawer showing complete company profile, qualification notes, and stage history.
 - **CSV Export** and **CSV Import** with header validation and row parsing.
 
-### Module C: LinkedIn & B2B Prospecting Workspace (`/#/prospecting`)
+### Module C: Prospecting Workspace (`/#/prospecting`)
 - Configurable **Ideal Customer Profile (ICP) Scoring Engine** calculating a transparent 0–100 score across 5 weighted dimensions.
 - Outreach copywriting hub with dynamic placeholder insertion (`{FirstName}`, `{Company}`, `{ServiceArea}`) and 1-click clipboard copy.
 - 1-click **Convert to CRM Lead** action bridging account research directly into active pipeline leads.
@@ -91,7 +96,7 @@ Every responsibility from the standard IT Services & BDE job description is acti
 - Column value aggregations.
 
 ### Module F: Market Research & Intelligence (`/#/market-research`)
-- 7-step discovery worksheet: Target businesses, observed bottlenecks, current solutions, competitor gaps, Nexora differentiation hypotheses, and evidence URLs.
+- 7-step discovery worksheet: Target businesses, observed bottlenecks, current solutions, competitor gaps, Nexora differentiation hypotheses, and evidence sources.
 
 ### Module G: Network & Relationship Management (`/#/network`)
 - Directory of Agency Partners, Referral Partners, Technology Partners, and Prospects.
@@ -104,7 +109,7 @@ Every responsibility from the standard IT Services & BDE job description is acti
 - Comprehensive proposal authoring: Problem statement, objectives, technical architecture, phased scope of work, deliverables, and payment milestones.
 - **Clean Executive Document Preview** formatted specifically for browser print / PDF export (`Ctrl+P` / `Cmd+P`).
 - Duplicate proposal and status tracking.
-- Pre-loaded with 3 rich sample proposals (Website Development, Power BI Dashboard, AI Chatbot).
+- Pre-loaded with 3 rich client proposals (Website Development, Power BI Dashboard, AI Chatbot).
 
 ### Module J: CRM Activities & Reminders (`/#/activities`)
 - Daily interaction log (Calls, Emails, LinkedIn Messages, Meetings, Research).
@@ -115,13 +120,13 @@ Every responsibility from the standard IT Services & BDE job description is acti
 - Visual charts for industry share, source attribution, and bidding platform volume.
 
 ### Module L: Portfolio Showcase (`/#/portfolio`)
-- Candidate presentation view for interviewers and hiring managers.
+- Candidate presentation view for interviewers and hiring managers by Keshav Sood.
 - Detailed alignment with the 9 JD responsibilities and architectural decisions.
 
 ### Module M: Settings & Data Management (`/#/settings`)
 - Storage quota and record counter.
 - Full workspace JSON backup export and restore.
-- Reset to initial demonstration dataset with confirmation dialog.
+- Reset to baseline operations dataset.
 
 ---
 
@@ -185,6 +190,8 @@ This produces an optimized, minified bundle inside the `dist/` directory.
 
 ---
 
-## 7. License
+## 7. Author
 
-MIT License. Designed and developed for professional portfolio demonstration.
+**Keshav Sood**  
+Business Development Executive & Sales Operations Specialist  
+Mohali & Chandigarh IT Park, India

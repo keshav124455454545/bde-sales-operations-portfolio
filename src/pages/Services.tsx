@@ -117,7 +117,7 @@ export const Services: React.FC = () => {
 
             <div className="text-right shrink-0 bg-slate-50 p-3 rounded-xl border border-slate-200">
               <span className="text-[10px] uppercase text-slate-400 block font-semibold">
-                Illustrative Budget & Timeline:
+                Target Budget & Timeline:
               </span>
               <div className="text-sm font-bold text-emerald-700">
                 {selectedService.priceRangeEstimate}

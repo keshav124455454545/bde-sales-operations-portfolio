@@ -86,11 +86,11 @@ export const Reports: React.FC = () => {
         </div>
       </div>
 
-      {/* Illustrative Notice */}
-      <div className="p-3 bg-amber-50/70 border border-amber-200/60 rounded-xl text-xs text-amber-900 flex items-start gap-2.5">
-        <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+      {/* Analytics Insights */}
+      <div className="p-3 bg-slate-100/70 border border-slate-200 rounded-xl text-xs text-slate-700 flex items-start gap-2.5">
+        <TrendingUp className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
         <div className="leading-relaxed">
-          <strong>Analytics Integrity Notice:</strong> All metrics, conversion ratios, and pipeline figures derive strictly from current local test records. Illustrative deal estimates are clearly distinguished from completed contractual commitments.
+          <strong>Sales Performance Intelligence:</strong> Stage conversion velocity, lead acquisition attribution, and bidding platform distribution calculated from active CRM pipeline records.
         </div>
       </div>
 

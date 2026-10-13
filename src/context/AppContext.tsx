@@ -497,7 +497,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const resetData = () => {
     const defaults = resetToDemoData();
     setData(defaults);
-    showToast('Reset all data to default fictional demonstration dataset.', 'info');
+    showToast('Reset all records to baseline dataset.', 'info');
   };
 
   const restoreBackup = (backupData: AppStateData) => {

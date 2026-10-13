@@ -84,7 +84,7 @@ export const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Welcome & Simulation Context Header */}
+      {/* Welcome & Executive Header */}
       <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-2xs flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
@@ -92,13 +92,11 @@ export const Dashboard: React.FC = () => {
               Welcome back, Keshav
             </h1>
             <span className="text-xs bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full font-medium border border-brand-200">
-              BDE Practice Session
+              BDE Operations Hub
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Simulating Business Development & Sales Operations for{' '}
-            <strong className="text-slate-700">Nexora Digital Solutions</strong>.
-            All client figures, pipelines, and proposals below are derived from active local data.
+            <strong className="text-slate-700">Nexora Digital Solutions</strong> — Mohali / Chandigarh Operations. Real-time overview of active deal pipelines, discovery meetings, and commercial proposal progress.
           </p>
         </div>
 
@@ -147,7 +145,7 @@ export const Dashboard: React.FC = () => {
             ${(stats.pipelineValue / 1000).toFixed(1)}k
           </div>
           <div className="text-[11px] text-slate-400 mt-1">
-            Illustrative estimate
+            Weighted pipeline value
           </div>
         </div>
 
