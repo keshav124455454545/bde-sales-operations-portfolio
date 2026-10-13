@@ -261,7 +261,7 @@ export const ProposalDocument: React.FC<ProposalDocumentProps> = ({
                 <span className="text-[10px] text-slate-400 block uppercase">
                   Authorized Nexora Representative:
                 </span>
-                <span className="font-bold text-slate-900 block mt-1">Simranjit Singh</span>
+                <span className="font-bold text-slate-900 block mt-1">Keshav Sood</span>
                 <span className="text-slate-500 text-[11px]">Business Development Executive</span>
               </div>
               <div className="text-[11px] text-slate-500">Date: {proposal.dateCreated}</div>

@@ -465,7 +465,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       serviceOfInterest: target.relevantService,
       businessProblem: target.observedBusinessNeed,
       qualificationNotes: `Converted from ICP research (Score: ${target.qualificationScore}/100). ${target.researchNotes}`,
-      leadOwner: 'Simranjit Singh (BDE)',
+      leadOwner: 'Keshav Sood (BDE)',
       status: 'Qualified',
       priority: target.qualificationScore >= 85 ? 'High' : 'Medium',
       estimatedDealValue: 7500,

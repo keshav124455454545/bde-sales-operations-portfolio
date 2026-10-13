@@ -123,7 +123,7 @@ export const Portfolio: React.FC = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-slate-100 text-xs">
           <div>
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Candidate:</span>
-            <span className="font-bold text-slate-800">Simranjit Singh</span>
+            <span className="font-bold text-slate-800">Keshav Sood</span>
           </div>
           <div>
             <span className="text-slate-400 block text-[10px] uppercase font-semibold">Target Roles:</span>

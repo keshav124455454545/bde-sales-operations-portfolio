@@ -291,7 +291,7 @@ export function parseLeadsCSV(csvText: string): { imported: Lead[]; errors: stri
       serviceOfInterest: (serviceIdx !== -1 && cols[serviceIdx]?.trim()) || 'Web Application Development',
       businessProblem: 'Imported prospective client opportunity requiring discovery evaluation.',
       qualificationNotes: 'Imported via CSV batch on ' + new Date().toISOString().slice(0, 10),
-      leadOwner: 'Simranjit Singh (BDE)',
+      leadOwner: 'Keshav Sood (BDE)',
       status: 'New Lead',
       priority: 'Medium',
       estimatedDealValue: isNaN(dealVal) ? 4500 : dealVal,

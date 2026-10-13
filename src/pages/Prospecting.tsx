@@ -45,7 +45,7 @@ export const Prospecting: React.FC = () => {
   const [companyName, setCompanyName] = useState('Apex Health');
   const [industryName, setIndustryName] = useState('Healthcare & MedTech');
   const [serviceArea, setServiceArea] = useState('AI Chatbot & Patient Triage');
-  const [senderName, setSenderName] = useState('Simranjit Singh');
+  const [senderName, setSenderName] = useState('Keshav Sood');
 
   // Add Account Research modal
   const [isAddAccountOpen, setIsAddAccountOpen] = useState(false);
@@ -80,7 +80,7 @@ export const Prospecting: React.FC = () => {
       .replace(/{ServiceArea}/g, serviceArea || '[Service Area]')
       .replace(/{Geography}/g, 'North America')
       .replace(/{BusinessProblem}/g, 'operational reporting delays')
-      .replace(/{YourName}/g, senderName || 'Simranjit Singh');
+      .replace(/{YourName}/g, senderName || 'Keshav Sood');
   };
 
   const handleCopy = (text: string, id: string) => {

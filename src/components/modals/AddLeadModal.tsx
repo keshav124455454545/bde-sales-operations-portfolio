@@ -68,7 +68,7 @@ export const AddLeadModal: React.FC<AddLeadModalProps> = ({ isOpen, onClose }) =
       serviceOfInterest,
       businessProblem: businessProblem.trim(),
       qualificationNotes: qualificationNotes.trim() || 'Created via quick lead action.',
-      leadOwner: 'Simranjit Singh (BDE)',
+      leadOwner: 'Keshav Sood (BDE)',
       status,
       priority,
       estimatedDealValue: parseFloat(estimatedDealValue) || 5000,

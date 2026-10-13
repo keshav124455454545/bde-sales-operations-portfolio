@@ -89,7 +89,7 @@ export const Dashboard: React.FC = () => {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold text-slate-900">
-              Welcome back, Simranjit
+              Welcome back, Keshav
             </h1>
             <span className="text-xs bg-brand-50 text-brand-700 px-2.5 py-0.5 rounded-full font-medium border border-brand-200">
               BDE Practice Session
